@@ -1,0 +1,12 @@
+<form action="/plusnoteProc" method="post">
+
+    <ul>
+        <li> 공지사항 추가 </li><br>
+        <li> 과목코드 : <%= course.course_number %> <input type="hidden" name="course_number" value="<%= course.course_number %>"> </li>
+        <li> 제목 : <input type="text" name='title' required></li>
+        <li> 내용 <br>
+        <textarea name="memo" cols="50" rows="10" required></textarea></li>
+        <button type="submit">추가하기</button>
+    </ul>
+
+</form>

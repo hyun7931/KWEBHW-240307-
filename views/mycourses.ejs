@@ -1,0 +1,25 @@
+<%- include('st_header.ejs') %>
+
+<h1> 나의 수강 목록 </h1>
+
+<table border=1>
+   <tr>
+       <th>과목코드</th>
+       <th>제목</th>
+       <th>교수명</th>
+       <th>내용</th>
+       <th>세부내용</th>
+       <th>수강신청</th>
+   </tr>
+
+   <% courses.forEach(function(course) { %>
+       <tr>
+           <td><%= course.course_number %></td>
+           <td><%= course.title %></td>
+           <td> <%=course.prof%></td>
+           <td><%- course.memo.replace(/\n/g, '<br>') %></td>
+           <td> <a href="/st_courses_outline?course_number=<%=course.course_number%>">상세보기</a></td>
+           <td>신청 완료</td>
+       </tr>
+   <% }) %>
+</table>

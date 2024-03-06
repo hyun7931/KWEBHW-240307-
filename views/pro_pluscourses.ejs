@@ -1,0 +1,15 @@
+<%-include('pro_header.ejs')%>
+
+<form action="/pluscoursesProc" method="post">
+
+    <ul>
+        <li> 강의추가 </li><br>
+        <li> 과목코드 : <input type="text" name='course_number' required></li>
+        <li> 제목 : <input type="text" name='title' required></li>
+        <li> 교수명 : <%= prof %></li>
+        <li> 내용 <br>
+        <textarea name="memo" cols="50" rows="10"></textarea></li>
+        <button>추가하기</button>
+    </ul>
+    
+</form>

@@ -1,0 +1,29 @@
+<%-include('pro_header.ejs')%>
+
+<h1> 강의 목록 </h1>
+<button><a href="/pro_pluscourses">강의추가</a></button>
+
+<table border=1>
+   <tr>
+       <th>과목코드</th>
+       <th>제목</th>
+       <th>교수명</th>
+       <th>내용</th>
+       <th>세부내용</th>
+       <th>삭제</th>
+   </tr>
+
+   <% lists.forEach(function(item){%>
+       
+       <tr>
+           <td> <%=item.course_number%> </td>
+           <td> <%=item.title%> </td>
+           <td> <%=item.prof%></td>
+           <td> <%-item.memo.replaceAll("\n","<br>")%> </td>
+           <td> <a href="/pro_courses_outline?course_number=<%=item.course_number%>">상세보기</a></td>
+           <td> <a href="/coursesDelete?course_number=<%=item.course_number%>" onclick="return confirm('정말 삭제하시겠습니까?')">삭제</a></td>
+        </tr>
+   
+   <% }) %>
+
+</table>

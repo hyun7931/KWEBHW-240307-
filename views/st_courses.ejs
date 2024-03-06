@@ -1,0 +1,26 @@
+<%- include('st_header.ejs') %>
+
+<h1> 강의 목록 </h1>
+
+<table border=1>
+   <tr>
+       <th>과목코드</th>
+       <th>제목</th>
+       <th>내용</th>
+       <th>세부내용</th>
+       <th>수강신청</th>
+   </tr>
+
+   <% lists.forEach(function(item){%>
+       
+       <tr>
+           <td> <%=item.course_number%> </td>
+           <td> <%=item.title%> </td>
+           <td> <%-item.memo.replaceAll("\n","<br>")%> </td>
+           <td> <a href="/st_courses_outline?course_number=<%=item.course_number%>">상세보기</a></td>
+           <td> <a href="/putmycourse?course_number=<%=item.course_number%>">신청</a></td>
+        </tr>
+   
+   <% }) %>
+
+</table>
